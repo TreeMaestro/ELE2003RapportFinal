@@ -1,0 +1,12 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Description du besoin}{1}{section.1}%
+\contentsline {section}{\numberline {2}Architecture globale du produit}{2}{section.2}%
+\contentsline {section}{\numberline {3}Résumé des blocs principaux}{3}{section.3}%
+\contentsline {section}{\numberline {4}Intégration du système}{4}{section.4}%
+\contentsline {section}{\numberline {5}Photographie du montage final}{5}{section.5}%
+\contentsline {section}{\numberline {6}Validation du produit complet}{6}{section.6}%
+\contentsline {section}{\numberline {7}Tableau de conformité}{7}{section.7}%
+\contentsline {section}{\numberline {8}Limites de la solution}{8}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}%
+\contentsline {section}{\numberline {10}Apprentissage continu}{10}{section.10}%
+\contentsline {section}{\numberline {A}Annexes}{11}{appendix.A}%

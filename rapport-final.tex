@@ -1,0 +1,286 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[cyr]{aeguill}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{ltablex}
+\keepXColumns
+\usepackage[french]{babel}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{framed}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage[htt]{hyphenat}
+\usepackage{lastpage}
+\usepackage{lstautogobble}
+\usepackage{listings}
+\usepackage{nicematrix}
+\usepackage{parskip}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{siunitx}
+\usepackage{steinmetz}
+\usepackage{soul}
+\usepackage{tabularx}
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{textpos}
+\usepackage{url}
+\usepackage{ragged2e}
+
+\usepackage[usegeometry]{typearea}
+\usepackage{geometry}
+
+%%% COULEURS %%%%
+\definecolor{bleu_poly}{RGB}{80, 187, 230}
+\definecolor{vert_poly}{cmyk}{78, 0, 100, 0}
+\definecolor{orange_poly}{RGB}{255, 96, 5}
+\definecolor{rouge_poly}{RGB}{211, 1, 47}
+\definecolor{shadecolor}{gray}{0.9}
+\definecolor{gris_poly}{RGB}{166,168,171}
+%%%%
+
+%%%% TIKZ %%%%
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usetikzlibrary{babel}
+\usetikzlibrary{calc,shapes,arrows,angles,intersections,quotes,pgfplots.fillbetween}
+\usetikzlibrary{arrows.meta,decorations.markings,bending}
+\usetikzlibrary{positioning, patterns, snakes, decorations.pathmorphing, 3d, bending, math,decorations.pathreplacing}
+
+\def\radius{.7mm} 
+\tikzstyle{branch}=[fill,shape=circle,minimum size=3pt,inner sep=0pt]
+\tikzstyle{block} = [draw,fill=bleu_poly!20,minimum size=1cm,inner sep=5pt]
+\tikzstyle{sum} = [draw, fill=white, circle, minimum size=0.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{joint} = [coordinate]
+\tikzstyle{jonction} = [draw, fill=black, circle, minimum size=2pt, inner sep=0pt]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{floattext} = [draw=none, fill=none]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\newcommand{\splus}{\scriptsize $+$}
+\newcommand{\sminus}{\scriptsize $-$}
+\tikzset{>=Latex}
+%%%%
+
+%----------------------------------------------------------------------------------------------%
+\oddsidemargin 0pt
+\topmargin 0pt
+\textwidth 6.5in
+\textheight 8.1in
+%----------------------------------------------------------------------------------------------%
+
+%%%% Définitions %%%%
+\graphicspath{{Figures/}}
+
+\def\session{Automne 2026}
+
+\pagestyle{fancy}
+
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+\tcbset{
+  page-titre/.style={
+    enhanced,
+    frame hidden,
+    interior hidden,
+    boxrule=0pt,
+    width=\textwidth,
+    left skip=1.5cm,
+    left=8mm,
+    right=0mm,
+    top=1mm,
+    bottom=1mm,
+    borderline west={2pt}{0pt}{rouge_poly},
+    before skip=0pt,
+    after skip=0pt,
+    before upper={
+      \RaggedRight
+      \setlength{\parindent}{0pt}
+    }
+  }
+}
+
+%%%% ENUITEM %%%%
+\newenvironment{tabitemize}
+{\begin{itemize}[nosep,leftmargin=*,topsep=0pt,partopsep=0pt,parsep=0pt,itemsep=0pt]}
+{\end{itemize}}
+%%%%
+
+\newcommand{\pagedegarde}{
+\newgeometry{left=2.0cm,right=2.0cm,top=1.2cm,bottom=1.4cm}
+\begin{titlepage}
+  \thispagestyle{empty}
+  \vspace*{0.3cm}
+  \begin{flushright}
+    \includegraphics[width=0.3\textwidth]{logo-polymtl.png}
+  \end{flushright}
+  \vspace{2.8cm}
+  \noindent
+  \hspace*{1.75cm}
+  \begin{tcolorbox}[page-titre]
+    {\large ELE2003\par}
+    {\large Projets de circuits électroniques\par}
+    \vspace{0.35cm}
+    {\Huge\bfseries Rapport final\par}
+    \vspace{0.35cm}
+    {\Large Marwane Trigui | 2375706 \par
+      Tristan Phonepraseuth | 2468788 
+    }
+  \end{tcolorbox}
+  \vfill
+  \begin{center}
+    \small \session \quad | \quad Département de génie électrique \quad | \quad Polytechnique Montréal
+  \end{center}
+\end{titlepage}
+\restoregeometry
+\clearpage
+}
+
+\lfoot{\session}
+\cfoot{ELE2003 -- Projets de circuits électroniques}
+\rfoot{\thepage/\pageref{LastPage}}
+\chead{}
+\lhead{\emph{Rapport final}}
+\rhead{\raisebox{-0.25\height}{\includegraphics[height=0.5cm]{symbole-polymtl.jpg}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+
+\begin{document}
+\renewcommand{\labelitemi}{$\bullet$}
+\hypersetup{pageanchor=false}
+\pagedegarde
+\hypersetup{pageanchor=true}
+
+\clearpage
+\pagenumbering{roman}
+\tableofcontents
+
+
+\clearpage
+\pagenumbering{arabic}
+\section{Description du besoin}
+Présentez brièvement le problème à résoudre. Le lecteur doit comprendre ce que le produit doit accomplir, sans entrer immédiatement dans les détails des circuits.
+
+\clearpage
+\section{Architecture globale du produit}
+Présentez le schéma bloc du système complet. Il doit montrer les principaux blocs, les signaux qui circulent entre eux et le rôle général de chaque partie.
+
+Vous pouvez adapter l'exemple suivant au produit réalisé.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[node distance=1.2cm]
+    \node[input] (in) {};
+    \node[block, right=1cm of in.east] (bloc1) {Bloc 1};
+    \node[block, right=1cm of bloc1.east] (bloc2) {Bloc 2};
+    \node[output, right=1cm of bloc2.east] (out) {};
+    \draw[->] (in) node[left]{$V_\mathit{in}$}  -- (bloc1);
+    \draw[->] (bloc1) -- (bloc2);
+    \draw[->] (bloc2) -- (out) node[right]{$V_\mathit{out}$};
+  \end{tikzpicture}
+  \caption{Architecture globale du produit}
+  \label{fig:architecture-globale}
+\end{figure}
+
+\clearpage
+\section{Résumé des blocs principaux}
+Présentez les principaux blocs du produit. Pour chaque bloc, indiquez son rôle, le circuit utilisé, son entrée, sa sortie et les choix de conception importants.
+
+Il ne faut pas reprendre tous les calculs détaillés des rapports techniques ciblés. Il faut plutôt expliquer pourquoi ce circuit a été retenu et comment il contribue au fonctionnement global du produit.
+
+Adaptez le tableau suivant au besoin.
+\begin{table}[ht]
+  \centering
+  \caption{Résumé des blocs principaux du produit}
+  \label{tab:blocs-principaux}
+  \begin{NiceTabularX}{\textwidth}{llllX}[hvlines]
+    \CodeBefore
+      \rowcolor{gray!15}{1}
+    \Body
+    \textbf{Bloc} & \textbf{Circuit} & \textbf{Entrée} & \textbf{Sortie}
+      & \textbf{Choix de conception important} \\
+    Bloc 1 & ... & ... & ... & ... \\
+    Bloc 2 & ... & ... & ... & ... \\
+    Bloc 3 & ... & ... & ... & ... \\
+  \end{NiceTabularX}
+\end{table}
+
+%% ATTENTION ! L'utilisation du package nicematrix nécessite 2 Ã  3 compilations successives pour que le tableau ait un beau rendu.
+
+\clearpage
+\section{Intégration du système}
+Expliquez comment les blocs fonctionnent ensemble. C'est ici qu'il faut discuter des interfaces entre les blocs : amplitudes, fréquences, impédances, saturation, niveaux de signaux, sommation, filtrage et compatibilité entre les étages.
+
+
+\clearpage
+\section{Photographie du montage final}
+Ajoutez une photographie claire du montage complet. Les principaux blocs du système doivent être identifiés directement sur l'image. Si le montage contient plusieurs zones fonctionnelles, celles-ci doivent être délimitées par des rectangles ou des annotations visuelles. La photographie doit permettre de relier le montage réel au schéma bloc et au fonctionnement global du produit.
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/photo-montage.jpg}
+%   \caption{Montage complet et identification des principaux blocs}
+%   \label{fig:montage-final}
+% \end{figure}
+
+\clearpage
+\section{Validation du produit complet}
+Présentez les tests qui démontrent le fonctionnement global du produit. Pour chaque test, expliquez la procédure suivie, pourquoi ce test est pertinent et ce qu'il permet de vérifier.
+
+Les résultats présentés doivent prouver que le produit répond au besoin, pas seulement que certains blocs fonctionnent isolément. Les conditions de test doivent être claires : signaux appliqués, amplitudes, fréquences, charges, alimentation, points de mesure et critères de réussite.
+
+\textbf{Les courbes doivent être retracée à partir des données exportées; les captures d'écran de courbes ne sont pas acceptées.}
+
+\clearpage
+\section{Tableau de conformité}
+Le tableau de conformité du rapport final doit porter sur les exigences fonctionnelles du produit. Il doit permettre de vérifier rapidement si le système complet répond au besoin.
+
+Il ne doit pas reprendre tous les critères de conception des circuits internes. Les détails comme les gains, les fréquences de coupure, les impédances ou les valeurs de composantes doivent être discutés seulement s'ils expliquent une performance globale du produit.
+
+Adaptez le tableau suivant au besoin.
+\begin{table}[ht]
+  \centering
+  \caption{Conformité fonctionnelle du produit complet}
+  \label{tab:conformite}
+  \begin{NiceTabularX}{\textwidth}{XXXc}[hvlines]
+    \CodeBefore
+      \rowcolor{gray!15}{1}
+    \Body
+    \textbf{Exigence fonctionnelle} & \textbf{Critère de réussite}
+      & \textbf{Résultat obtenu} & \textbf{Conforme?} \\
+    Exigence 1 & ... & ... & Oui / Non \\
+    Exigence 2 & ... & ... & Oui / Non \\
+    Exigence 3 & ... & ... & Oui / Non \\
+  \end{NiceTabularX}
+\end{table}
+
+\clearpage
+\section{Limites de la solution}
+Présentez les limites réelles du produit : performance imparfaite, sensibilité aux composantes, distorsion, bruit, difficulté d'intégration, plage de fonctionnement limitée, contraintes de montage, etc.
+
+\clearpage
+\section{Conclusion}
+La conclusion doit indiquer clairement si le produit répond au besoin, avec quelles performances et avec quelles limites.
+
+\clearpage
+\section{Apprentissage continu}
+Présentez une ou plusieurs lacunes techniques rencontrées pendant le projet et les moyens utilisés pour les combler. Cette section doit rester liée au contenu technique du projet : notion à approfondir, outil à mieux maîtriser, méthode de mesure, stratégie de débogage ou choix de conception à améliorer.
+
+Indiquez aussi ce qui devrait être appris ou approfondi pour améliorer une prochaine version du produit. 
+
+\clearpage
+Utilisez cette section seulement si des annexes sont nécessaires.
+\appendix
+\section{Annexes}
+Les annexes doivent être référencées dans le corps du rapport. Elles peuvent contenir des données complètes ou des scripts, mais ne remplacent pas les résultats, les figures, les tableaux de synthèse et les analyses essentiels.
+\end{document}
