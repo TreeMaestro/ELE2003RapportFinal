@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  9 NOV 2026 13:11
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  12 NOV 2026 17:12
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/tree.maestro/École/Uni/TRIMESTRE_A26/ELE2003/rapports/gabarit-latex-rapport-final/rapport-final
@@ -1551,91 +1551,111 @@ Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 169.
 <./Figures/symbole-polymtl.jpg>]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 174.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 176.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 187.
- (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 187.
- (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+<Figures/schemaBlocFinal.png, id=88, 1565.85pt x 704.6325pt>
+File: Figures/schemaBlocFinal.png Graphic file (type png)
+<use Figures/schemaBlocFinal.png>
+Package luatex.def Info: Figures/schemaBlocFinal.png  used on input line 182.
+(luatex.def)             Requested size: 469.75499pt x 211.38063pt.
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 195.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 194.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [2
 
-]
+<./Figures/schemaBlocFinal.png>]
 \g__nicematrix_max_cell_width_dim=\dimen425
 \c@iRow=\count444
 \c@jCol=\count445
+LaTeX Font Info:    Trying to load font information for U+msa on input line 208.
+ (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 208.
+ (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 \l__nicematrix_cell_box=\box123
 \l__nicematrix_left_delim_dim=\dimen426
 \l__nicematrix_right_delim_dim=\dimen427
+
+
+Package nicematrix Warning: Columns not used.
+(nicematrix)                The preamble of your environment {NiceTabularX} is
+(nicematrix)                'llllX'. It announces 5 columns but you only used
+(nicematrix)                4.
+(nicematrix)                The columns you did not used won't be created.
+(nicematrix)                You won't have similar warning till the end of the
+(nicematrix)                document.
+
+
+Overfull \hbox (50.48576pt too wide) in paragraph at lines 206--220
+ []$[][][][][][]$[][][][][][][][][][][][][][][][][][][] 
+ []
+
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 220.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 224.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
- [3
+[3
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 225.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 229.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [4
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 236.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 240.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [5
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 244.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 248.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [6
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 267.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 271.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [7
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 271.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 275.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [8
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 275.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 279.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [9
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 281.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 289.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [10
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 286.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 294.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [11
 
@@ -1650,27 +1670,24 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `rapport-final.out' has not changed.
 (rerunfilecheck)             Checksum: FC7263CF06668BA20B31912382239126;1758.
 )
 
 Here is how much of LuaTeX's memory you used:
- 75396 strings out of 476076
+ 75603 strings out of 476076
  125086,2848258 words of node,token memory allocated
- 980 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 15 glue, 4 kern, 1 penalty, 3 glyph, 86 attribute, 90 glue_spec, 19 attribute_list, 2 write nodes
-   avail lists: 2:6586,3:1393,4:58,5:112,6:48,7:2874,8:4,9:1022,10:12,11:136
- 96167 multiletter control sequences out of 65536+600000
- 92 fonts using 5968871 bytes
- 108i,16n,101p,819b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on rapport-final.pdf (13 pages, 431374 bytes).
+ 1011 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 17 glue, 4 kern, 1 penalty, 3 glyph, 91 attribute, 91 glue_spec, 20 attribute_list, 2 write nodes
+   avail lists: 2:10198,3:2137,4:58,5:162,6:48,7:4435,8:4,9:1516,10:12,11:272
+ 96371 multiletter control sequences out of 65536+600000
+ 90 fonts using 5844391 bytes
+ 108i,16n,101p,906b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on rapport-final.pdf (13 pages, 469368 bytes).
 
-PDF statistics: 185 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
+PDF statistics: 179 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
  28 named destinations out of 1000 (max. 1048576)
  104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

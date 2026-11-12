@@ -171,27 +171,26 @@
 \section{Description du besoin}
 Présentez brièvement le problème à résoudre. Le lecteur doit comprendre ce que le produit doit accomplir, sans entrer immédiatement dans les détails des circuits.
 
+Nous désirons installer un réseau domestique dans lequel toute l'information passe par un seul canal. Ce projet comporte trois signaux : deux de son et une pour une DEL. Pour ce faire, nous utilisons trois bandes fréquentielles distinctes dans lesquelles les signaux pourront se déplacer sans rentrer en collision avec les autres.
+
 \clearpage
 \section{Architecture globale du produit}
 Présentez le schéma bloc du système complet. Il doit montrer les principaux blocs, les signaux qui circulent entre eux et le rôle général de chaque partie.
 
-Vous pouvez adapter l'exemple suivant au produit réalisé.
-
 \begin{figure}[ht]
   \centering
-  \begin{tikzpicture}[node distance=1.2cm]
-    \node[input] (in) {};
-    \node[block, right=1cm of in.east] (bloc1) {Bloc 1};
-    \node[block, right=1cm of bloc1.east] (bloc2) {Bloc 2};
-    \node[output, right=1cm of bloc2.east] (out) {};
-    \draw[->] (in) node[left]{$V_\mathit{in}$}  -- (bloc1);
-    \draw[->] (bloc1) -- (bloc2);
-    \draw[->] (bloc2) -- (out) node[right]{$V_\mathit{out}$};
-  \end{tikzpicture}
+  \includegraphics[width=1\textwidth]{schemaBlocFinal.png}
   \caption{Architecture globale du produit}
-  \label{fig:architecture-globale}
+  \label{fig:schemaBloc-final}
 \end{figure}
 
+La section \textbf{bleu} représente les blocs servant au déplacement fréquentiel du son deux sur la bande fréquentielle centrale de notre ligne de transmission (35 kHz - 65 kHz). Il comporte un modulateur qui a pour but de moduler la fréquence du son standard (0 - 10 kHz) vers la bande fréquentielle centrale. Ce modulateur prend en entrée le signal du son deux en tant que modulant et il prend aussi la sortie d'un oscillateur qui génère la porteuse de la modulation à une fréquence de 50 kHz. La sortie du modulateur est l'entrée du sommateur.
+
+La section \textbf{vert} représente les blocs de l'entrée du canal de transmission. Il comporte un sommateur qui prend en entrée les deux signaux de sons et le signal de la \textit{DEL}. L'autre bloc est un oscillateur qui génère le signal de la \textit{DEL} à une fréquence de 92 kHz pour qu'il se retrouve dans la haute bande fréquentielle (90 kHz - 100 kHz).
+
+La section \textbf{orange} représente les étages qui filtrent les différentes bandes fréquentielles de notre ligne de transmission afin de les ressortir par la suite. Le passe-bas filtre le son un, le passe-bande filtre le son deux et le passe-bande étroit filtre le signal de la \textit{DEL}.
+
+La section \textbf{rouge} est un bloc qui est le circuit qui démodule le son deux qui se retrouve dans la deuxième bande fréquentielle. La sortie est le son deux.
 \clearpage
 \section{Résumé des blocs principaux}
 Présentez les principaux blocs du produit. Pour chaque bloc, indiquez son rôle, le circuit utilisé, son entrée, sa sortie et les choix de conception importants.
@@ -207,11 +206,16 @@ Adaptez le tableau suivant au besoin.
     \CodeBefore
       \rowcolor{gray!15}{1}
     \Body
-    \textbf{Bloc} & \textbf{Circuit} & \textbf{Entrée} & \textbf{Sortie}
+    \textbf{Bloc} & \textbf{Entrée} & \textbf{Sortie}
       & \textbf{Choix de conception important} \\
-    Bloc 1 & ... & ... & ... & ... \\
-    Bloc 2 & ... & ... & ... & ... \\
-    Bloc 3 & ... & ... & ... & ... \\
+    oscillateur & - & porteuse & la fréquence de la porteuse \\
+    modulateur & porteuse et son 2 & son 2 modulé & utilisation de la JFET \\
+    sommateur & son 1,son 2 et la \textit{DEL} & canal de transmission & -\\
+    oscillateur 2 & - & signal de la \textit{DEL} & la fréquence de la \textit{DEL}\\
+    filtre passe-bas & canal de transmission & son 1 & le type de filtre (Chebychev)\\
+    filtre passe-bande & canal de transmission & son 2 & la topologie (MFB)\\
+    filtre passe-bande étroit & canal de transmission & signal de la \textit{DEL} & la topologie (biquad)\\
+    démodulateur & son 2 modulé & son 2 démodulé & tension de sortie du son 2\\
   \end{NiceTabularX}
 \end{table}
 
@@ -277,6 +281,10 @@ La conclusion doit indiquer clairement si le produit répond au besoin, avec que
 Présentez une ou plusieurs lacunes techniques rencontrées pendant le projet et les moyens utilisés pour les combler. Cette section doit rester liée au contenu technique du projet : notion à approfondir, outil à mieux maîtriser, méthode de mesure, stratégie de débogage ou choix de conception à améliorer.
 
 Indiquez aussi ce qui devrait être appris ou approfondi pour améliorer une prochaine version du produit. 
+
+Dès le début du projet, lors de la conception du circuit réalisant l'extraction du son deux, on avait de la difficulté à réaliser ce filtre expérimentalement. Théoriquement, notre simulation \textit{ltspice} fonctionnement parfaitement, mais on n'arrivait pas à trouver la cause de l'erreur. On a alors dû apprendre très tôt des bonnes stratégies de débogage afin d'arriver à terminer le module de notre projet. On a appris à commencer à analyser le problème dans sa globalité et d'aller de plus en plus précis. Pour améliorer une prochaine version du produit, apprendre à déboguer plus efficacement et plus rapidement est grandement avantageux pour sauver du temps dans la réalisation du projet ce qui donne aussi plus de temps pour améliorer le produit.
+
+
 
 \clearpage
 Utilisez cette section seulement si des annexes sont nécessaires.
