@@ -171,7 +171,7 @@
 \section{Description du besoin}
 Présentez brièvement le problème à résoudre. Le lecteur doit comprendre ce que le produit doit accomplir, sans entrer immédiatement dans les détails des circuits.
 
-Nous désirons installer un réseau domestique dans lequel toute l'information passe par un seul canal. Ce projet comporte trois signaux : deux de son et une pour une DEL. Pour ce faire, nous utilisons trois bandes fréquentielles distinctes dans lesquelles les signaux pourront se déplacer sans rentrer en collision avec les autres.
+Nous désirons installer un réseau domestique dans lequel toute l'information passe par un seul canal. Ce projet comporte trois signaux : deux de son et une pour une \textit{DEL}. Pour ce faire, nous utilisons trois bandes fréquentielles distinctes dans lesquelles les signaux pourront se déplacer sans rentrer en collision avec les autres.
 
 \clearpage
 \section{Architecture globale du produit}
@@ -184,13 +184,6 @@ Présentez le schéma bloc du système complet. Il doit montrer les principaux b
   \label{fig:schemaBloc-final}
 \end{figure}
 
-La section \textbf{bleu} représente les blocs servant au déplacement fréquentiel du son deux sur la bande fréquentielle centrale de notre ligne de transmission (35 kHz - 65 kHz). Il comporte un modulateur qui a pour but de moduler la fréquence du son standard (0 - 10 kHz) vers la bande fréquentielle centrale. Ce modulateur prend en entrée le signal du son deux en tant que modulant et il prend aussi la sortie d'un oscillateur qui génère la porteuse de la modulation à une fréquence de 50 kHz. La sortie du modulateur est l'entrée du sommateur.
-
-La section \textbf{vert} représente les blocs de l'entrée du canal de transmission. Il comporte un sommateur qui prend en entrée les deux signaux de sons et le signal de la \textit{DEL}. L'autre bloc est un oscillateur qui génère le signal de la \textit{DEL} à une fréquence de 92 kHz pour qu'il se retrouve dans la haute bande fréquentielle (90 kHz - 100 kHz).
-
-La section \textbf{orange} représente les étages qui filtrent les différentes bandes fréquentielles de notre ligne de transmission afin de les ressortir par la suite. Le passe-bas filtre le son un, le passe-bande filtre le son deux et le passe-bande étroit filtre le signal de la \textit{DEL}.
-
-La section \textbf{rouge} est un bloc qui est le circuit qui démodule le son deux qui se retrouve dans la deuxième bande fréquentielle. La sortie est le son deux.
 \clearpage
 \section{Résumé des blocs principaux}
 Présentez les principaux blocs du produit. Pour chaque bloc, indiquez son rôle, le circuit utilisé, son entrée, sa sortie et les choix de conception importants.
@@ -225,6 +218,13 @@ Adaptez le tableau suivant au besoin.
 \section{Intégration du système}
 Expliquez comment les blocs fonctionnent ensemble. C'est ici qu'il faut discuter des interfaces entre les blocs : amplitudes, fréquences, impédances, saturation, niveaux de signaux, sommation, filtrage et compatibilité entre les étages.
 
+La section \textbf{bleu} de la figure \ref{fig:schemaBloc-final} représente les blocs servant au déplacement fréquentiel du son deux sur la bande fréquentielle centrale de notre ligne de transmission (35 kHz - 65 kHz). Il comporte un modulateur qui a pour but de moduler la fréquence du son standard (0 - 10 kHz) vers la bande fréquentielle centrale. Ce modulateur prend en entrée le signal du son deux en tant que modulant et il prend aussi la sortie d'un oscillateur qui génère la porteuse de la modulation à une fréquence de 50 kHz. La sortie du modulateur est l'entrée du sommateur.
+
+La section \textbf{vert} de la figure \ref{fig:schemaBloc-final} représente les blocs de l'entrée du canal de transmission. Il comporte un sommateur qui prend en entrée les deux signaux de sons et le signal de la \textit{DEL}. L'autre bloc est un oscillateur qui génère le signal de la \textit{DEL} à une fréquence de 92 kHz pour qu'il se retrouve dans la haute bande fréquentielle (90 kHz - 100 kHz).
+
+La section \textbf{orange} de la figure \ref{fig:schemaBloc-final} représente les étages qui filtrent les différentes bandes fréquentielles de notre ligne de transmission afin de les ressortir par la suite. Le passe-bas filtre le son un, le passe-bande filtre le son deux et le passe-bande étroit filtre le signal de la \textit{DEL}.
+
+La section \textbf{rouge} de la figure \ref{fig:schemaBloc-final} est un bloc qui est le circuit qui démodule le son deux qui se retrouve dans la deuxième bande fréquentielle. La sortie est le son deux.
 
 \clearpage
 \section{Photographie du montage final}
@@ -244,6 +244,17 @@ Présentez les tests qui démontrent le fonctionnement global du produit. Pour c
 Les résultats présentés doivent prouver que le produit répond au besoin, pas seulement que certains blocs fonctionnent isolément. Les conditions de test doivent être claires : signaux appliqués, amplitudes, fréquences, charges, alimentation, points de mesure et critères de réussite.
 
 \textbf{Les courbes doivent être retracée à partir des données exportées; les captures d'écran de courbes ne sont pas acceptées.}
+
+Pour valider le fonctionnement de l'entièreté de notre projet, nous avons effectué deux tests pour chaque module. Chaque module comporte l'extraction d'un différent signal d'entrée. Le module un est sur  l'extraction du son \#1 du canal de transmission. Le module deux comporte l'extraction du son \#2 du canal de transmission. Le module trois est l'extraction du signal de la \textit{DEL} du canal de transmission. Alors globalement, les deux tests pour chaque modules sont :
+
+\begin{itemize}
+  \item Si on génère un signal \textbf{dans la bande passante} du filtre qui l'extrait à l'entrée du canal de transmission, est-ce qu'il est \textbf{encore présent} après avoir été filtrer ? Si oui, à t-il la même forme qu'à l'entrée ?
+  \item Si on génère un signal \textbf{en dehors de la bande passante} du filtre qui l'extrait à l'entrée du canal de transmission, est-ce qu'il \textbf{atténue correctement} ce signal après l'avoir filtré ?
+\end{itemize}
+
+\begin{framed}
+  Par exemple, pour le son \# 1, si on génère un signal sinusoïde de 1 V crête à crête, est-il encore présent après avoir été filtré par le passe-bas ? S'il est encore présent, est-ce qu'il est le même après avoir été filtré ? On regarde son amplitude, sa forme (distorsion), sa fréquence et etc. 
+\end{framed}
 
 \clearpage
 \section{Tableau de conformité}
@@ -283,8 +294,6 @@ Présentez une ou plusieurs lacunes techniques rencontrées pendant le projet et
 Indiquez aussi ce qui devrait être appris ou approfondi pour améliorer une prochaine version du produit. 
 
 Dès le début du projet, lors de la conception du circuit réalisant l'extraction du son deux, on avait de la difficulté à réaliser ce filtre expérimentalement. Théoriquement, notre simulation \textit{ltspice} fonctionnement parfaitement, mais on n'arrivait pas à trouver la cause de l'erreur. On a alors dû apprendre très tôt des bonnes stratégies de débogage afin d'arriver à terminer le module de notre projet. On a appris à commencer à analyser le problème dans sa globalité et d'aller de plus en plus précis. Pour améliorer une prochaine version du produit, apprendre à déboguer plus efficacement et plus rapidement est grandement avantageux pour sauver du temps dans la réalisation du projet ce qui donne aussi plus de temps pour améliorer le produit.
-
-
 
 \clearpage
 Utilisez cette section seulement si des annexes sont nécessaires.

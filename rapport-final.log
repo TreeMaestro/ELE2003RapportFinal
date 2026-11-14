@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  12 NOV 2026 17:12
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  14 NOV 2026 12:58
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/tree.maestro/École/Uni/TRIMESTRE_A26/ELE2003/rapports/gabarit-latex-rapport-final/rapport-final
@@ -1563,7 +1563,7 @@ Package luatex.def Info: Figures/schemaBlocFinal.png  used on input line 182.
 (luatex.def)             Requested size: 469.75499pt x 211.38063pt.
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 194.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 187.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [2
 
@@ -1571,11 +1571,11 @@ Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 194.
 \g__nicematrix_max_cell_width_dim=\dimen425
 \c@iRow=\count444
 \c@jCol=\count445
-LaTeX Font Info:    Trying to load font information for U+msa on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 201.
  (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 201.
  (/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1593,13 +1593,13 @@ Package nicematrix Warning: Columns not used.
 (nicematrix)                document.
 
 
-Overfull \hbox (50.48576pt too wide) in paragraph at lines 206--220
+Overfull \hbox (50.48576pt too wide) in paragraph at lines 199--213
  []$[][][][][][]$[][][][][][][][][][][][][][][][][][][] 
  []
 
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 224.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 217.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
 [3
 
@@ -1620,42 +1620,42 @@ Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 240.
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 248.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 259.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [6
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 271.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 282.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [7
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 275.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 286.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [8
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 279.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 290.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [9
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 289.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 298.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [10
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 294.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 303.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [11
 
@@ -1675,19 +1675,19 @@ Package rerunfilecheck Info: File `rapport-final.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 75603 strings out of 476076
+ 75608 strings out of 476076
  125086,2848258 words of node,token memory allocated
- 1011 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 17 glue, 4 kern, 1 penalty, 3 glyph, 91 attribute, 91 glue_spec, 20 attribute_list, 2 write nodes
-   avail lists: 2:10198,3:2137,4:58,5:162,6:48,7:4435,8:4,9:1516,10:12,11:272
- 96371 multiletter control sequences out of 65536+600000
+ 1173 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 29 glue, 4 kern, 1 penalty, 3 glyph, 111 attribute, 97 glue_spec, 24 attribute_list, 2 write nodes
+   avail lists: 1:1,2:10174,3:2137,4:58,5:244,6:48,7:4423,8:4,9:1516,10:12,11:318
+ 96376 multiletter control sequences out of 65536+600000
  90 fonts using 5844391 bytes
  108i,16n,101p,906b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on rapport-final.pdf (13 pages, 469368 bytes).
+Output written on rapport-final.pdf (13 pages, 471979 bytes).
 
-PDF statistics: 179 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+PDF statistics: 183 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
  28 named destinations out of 1000 (max. 1048576)
  104 words of extra memory for PDF output out of 10000 (max. 100000000)
 
