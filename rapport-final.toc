@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {4}Intégration du système}{4}{section.4}%
 \contentsline {section}{\numberline {5}Photographie du montage final}{5}{section.5}%
 \contentsline {section}{\numberline {6}Validation du produit complet}{6}{section.6}%
-\contentsline {section}{\numberline {7}Tableau de conformité}{7}{section.7}%
-\contentsline {section}{\numberline {8}Limites de la solution}{8}{section.8}%
-\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}%
-\contentsline {section}{\numberline {10}Apprentissage continu}{10}{section.10}%
-\contentsline {section}{\numberline {A}Annexes}{11}{appendix.A}%
+\contentsline {section}{\numberline {7}Tableau de conformité}{8}{section.7}%
+\contentsline {section}{\numberline {8}Limites de la solution}{9}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{10}{section.9}%
+\contentsline {section}{\numberline {10}Apprentissage continu}{11}{section.10}%
+\contentsline {section}{\numberline {A}Annexes}{12}{appendix.A}%

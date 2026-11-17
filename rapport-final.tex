@@ -256,6 +256,90 @@ Pour valider le fonctionnement de l'entièreté de notre projet, nous avons effe
   Par exemple, pour le son \# 1, si on génère un signal sinusoïde de 1 V crête à crête, est-il encore présent après avoir été filtré par le passe-bas ? S'il est encore présent, est-ce qu'il est le même après avoir été filtré ? On regarde son amplitude, sa forme (distorsion), sa fréquence et etc. 
 \end{framed}
 
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.85\linewidth,
+      height=6cm,
+      xlabel={Temps (ms)},
+      ylabel={Tension (V)},
+      grid=both,
+      xmin = 0,
+      xmax = 1.5
+    ]
+    \addplot[
+      vert_poly,
+      line width=1.5pt,
+      no marks
+    ]
+    table[
+      col sep=semicolon,
+      x expr=\thisrowno{0}*1000,
+      y index=1,
+      header=true
+    ]{CSV/sinusGenPasseBas1.csv};
+    \addplot[
+      bleu_poly,
+      line width=1.5pt,
+      no marks
+    ]
+    table[
+      col sep=semicolon,
+      x expr=\thisrowno{0}*1000,
+      y index=1,
+      header=true
+    ]{CSV/testPasseBas.csv};
+    \addlegendentry{signal généré de 5 kHz}
+    \addlegendentry{signal filtré}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Comportement d'un signal sinusoïde de 1 V crête à crête dans la bande passante du filtre du son \#1}
+  \label{fig:testSon1}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.85\linewidth,
+      height=6cm,
+      xlabel={Temps (ms)},
+      ylabel={Tension (V)},
+      grid=both,
+      xmin=0,
+      xmax=2e-2
+    ]
+    \addplot[
+      vert_poly,
+      line width=1.5pt,
+      no marks
+    ]
+    table[
+      col sep=semicolon,
+      x expr=\thisrowno{0}*1000,
+      y index=1,
+      header=true
+    ]{CSV/sinusGenPasseBas2.csv};
+    \addplot[
+      bleu_poly,
+      line width=1.5pt,
+      no marks
+    ]
+    table[
+      col sep=semicolon,
+      x expr=\thisrowno{0}*1000,
+      y index=1,
+      header=true
+    ]{CSV/testPasseBas2.csv};
+    \addlegendentry{signal généré de 50 kHz}
+    \addlegendentry{signal filtré}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Comportement d'un signal sinusoïde de 1 V crête à crête en dehors dans la bande passante du filtre du son \#1}
+  \label{fig:testSon1.2}
+\end{figure}
+
 \clearpage
 \section{Tableau de conformité}
 Le tableau de conformité du rapport final doit porter sur les exigences fonctionnelles du produit. Il doit permettre de vérifier rapidement si le système complet répond au besoin.
@@ -273,15 +357,25 @@ Adaptez le tableau suivant au besoin.
     \Body
     \textbf{Exigence fonctionnelle} & \textbf{Critère de réussite}
       & \textbf{Résultat obtenu} & \textbf{Conforme?} \\
-    Exigence 1 & ... & ... & Oui / Non \\
-    Exigence 2 & ... & ... & Oui / Non \\
-    Exigence 3 & ... & ... & Oui / Non \\
+      Extraction du son \#1 & Le signal est bien extrait & Oui / Non \\
+      Extraction du son \#2 & Le signal est bien extrait & ... & Oui / Non \\
+      Extraction du signal de la \textit{DEL} & Le signal est bien extrait & ... & Oui / Non \\
   \end{NiceTabularX}
 \end{table}
 
 \clearpage
 \section{Limites de la solution}
 Présentez les limites réelles du produit : performance imparfaite, sensibilité aux composantes, distorsion, bruit, difficulté d'intégration, plage de fonctionnement limitée, contraintes de montage, etc.
+
+Le produit contient plusieurs limites expérimentales : 
+\begin{itemize}
+  \item La sensibilité des composantes, notamment dans les passes bandes.
+  \item Le fonctionnement linéaire des composantes comme la \textit{JFET} et la diode.
+  \item Les effets parasites des composantes.
+\end{itemize}
+
+Commençons par dénoncer la sensibilité du produit. Lors de la conception du projet, nous avons choisi deux topologies distinctes pour la conception des filtres : la topologie \textit{multiple feedback} et la topologie \textit{biquad de Tow-Thomas}. La première topologie comporte une bonne sensibilité généralement Par contre, pour l'extraction du son \#2 du canal de transmission, nous avons fait un filtre d'ordre 12 qui utilise cette topologie et cet ordre élevé fait en sorte qu'une erreur sur une composante à plus d'effet sur l'allure globale du filtre. Il faut alors faire attention à la tolérance des composantes du filtre passe bande de l'extraction du son \#2. Du même vaut pour la deuxième topologie qu'on a choisi pour l'extraction du signal de la \textit{DEL}. La topologie \textit{biquad de Tow-Thomas} est très sensible et il faut faire attention pour la tolérance des composantes.
+
 
 \clearpage
 \section{Conclusion}
