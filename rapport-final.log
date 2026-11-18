@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  17 NOV 2026 11:51
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026/Homebrew)  (format=lualatex 2026.3.1)  18 NOV 2026 09:53
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/tree.maestro/École/Uni/TRIMESTRE_A26/ELE2003/rapports/gabarit-latex-rapport-final/rapport-final
@@ -1599,84 +1599,71 @@ Overfull \hbox (50.48576pt too wide) in paragraph at lines 199--213
 
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 217.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 223.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
 [3
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 229.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 235.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [4
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 240.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 246.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [5
 
 ]
-PGFPlots: reading {CSV/sinusGenPasseBas1.csv}
 
+LaTeX Warning: Reference `affaire' on page 6 undefined on input line 256.
 
-Package pgfplots Warning: Table 'CSV/sinusGenPasseBas1.csv' has an empty column name; replacing it by '1'' on input line 281.
-
- [warning /pgfplots/warning/empty column name]
-PGFPlots: reading {CSV/testPasseBas.csv}
-
-Package pgfplots Warning: Table 'CSV/testPasseBas.csv' has an empty column name; replacing it by '1'' on input line 292.
-
- [warning /pgfplots/warning/empty column name]
-PGFPlots: reading {CSV/sinusGenPasseBas2.csv}
-NOTE: coordinate (--,--,--) [--](was ({1Y2.0e0]}{0Y0.0e0]},-0.001533978381483272,--) [--]) has been dropped because of a coordinate filter.
-PGFPlots: reading {CSV/testPasseBas2.csv}
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 343.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 259.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
 [6
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 343.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 282.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
- [7]
+ [7
+
+]
+
+LaTeX Warning: Reference `AFFAIRE' on page 8 undefined on input line 297.
+
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 366.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 300.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
- [8
+[8
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 380.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 304.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [9
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 384.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 312.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [10
 
 ]
 File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
 <use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 392.
+Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 317.
 (luatex.def)             Requested size: 14.22498pt x 14.22636pt.
  [11
-
-]
-File: Figures/symbole-polymtl.jpg Graphic file (type jpg)
-<use Figures/symbole-polymtl.jpg>
-Package luatex.def Info: Figures/symbole-polymtl.jpg  used on input line 397.
-(luatex.def)             Requested size: 14.22498pt x 14.22636pt.
- [12
 
 ] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -1689,24 +1676,27 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `rapport-final.out' has not changed.
 (rerunfilecheck)             Checksum: FC7263CF06668BA20B31912382239126;1758.
 )
 
 Here is how much of LuaTeX's memory you used:
- 83467 strings out of 476076
- 596484,4921788 words of node,token memory allocated
- 1331 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 37 glue, 4 kern, 1 penalty, 3 glyph, 141 attribute, 103 glue_spec, 30 attribute_list, 2 write nodes
-   avail lists: 1:2,2:168754,3:44212,4:76,5:261,6:48,7:6145,8:5,9:1516,10:14,11:349
- 104205 multiletter control sequences out of 65536+600000
+ 75605 strings out of 476076
+ 125086,2848258 words of node,token memory allocated
+ 1145 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 25 glue, 4 kern, 1 penalty, 3 glyph, 111 attribute, 97 glue_spec, 24 attribute_list, 2 write nodes
+   avail lists: 2:10288,3:2159,4:58,5:279,6:48,7:7073,8:4,9:1554,10:14,11:488
+ 96373 multiletter control sequences out of 65536+600000
  90 fonts using 5844391 bytes
- 108i,19n,101p,1038b,2348s stack positions out of 10000i,1000n,20000p,630993b,200000s
-</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on rapport-final.pdf (14 pages, 697319 bytes).
+ 108i,16n,101p,1038b,1102s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on rapport-final.pdf (13 pages, 479888 bytes).
 
-PDF statistics: 203 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 1048576)
+PDF statistics: 183 PDF objects out of 1000 (max. 8388607)
+ 155 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 1048576)
  104 words of extra memory for PDF output out of 10000 (max. 100000000)
 

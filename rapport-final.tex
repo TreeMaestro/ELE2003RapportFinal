@@ -171,7 +171,7 @@
 \section{Description du besoin}
 Présentez brièvement le problème à résoudre. Le lecteur doit comprendre ce que le produit doit accomplir, sans entrer immédiatement dans les détails des circuits.
 
-Nous désirons installer un réseau domestique dans lequel toute l'information passe par un seul canal. Ce projet comporte trois signaux : deux de son et une pour une \textit{DEL}. Pour ce faire, nous utilisons trois bandes fréquentielles distinctes dans lesquelles les signaux pourront se déplacer sans rentrer en collision avec les autres.
+Nous désirons installer un système domotique dans lequel toute l'information passe par un seul fil de communication. Ce projet comporte trois signaux : deux de son et une pour une \textit{DEL}. Pour ce faire, nous utilisons trois bandes fréquentielles distinctes dans lesquelles les signaux pourront se déplacer sans rentrer en collision avec les autres. La première bande fréquentielle est celle du son \#1 et se situe de 0 - 10 kHz. La deuxième bande fréquentielle est celle du son \#2 et se situe de 35 - 65 kHz. La troisième bande fréquentielle est celle de la \textit{DEL} et se situe de 90 - 100 kHz. En plus le projet doit contenir seulement le son \#1 et le son \#2 comme entrée. En d'autres mots, le circuit doit pouvoir fonctionner uniquement en l'alimentant et en lui procurant les signaux pour les deux sons.
 
 \clearpage
 \section{Architecture globale du produit}
@@ -201,18 +201,24 @@ Adaptez le tableau suivant au besoin.
     \Body
     \textbf{Bloc} & \textbf{Entrée} & \textbf{Sortie}
       & \textbf{Choix de conception important} \\
-    oscillateur & - & porteuse & la fréquence de la porteuse \\
-    modulateur & porteuse et son 2 & son 2 modulé & utilisation de la JFET \\
+    oscillateur & - & porteuse & - \\
+    modulateur & porteuse et son 2 & son 2 modulé & - \\
     sommateur & son 1,son 2 et la \textit{DEL} & canal de transmission & -\\
-    oscillateur 2 & - & signal de la \textit{DEL} & la fréquence de la \textit{DEL}\\
+    oscillateur 2 & - & signal de la \textit{DEL} & -\\
     filtre passe-bas & canal de transmission & son 1 & le type de filtre (Chebychev)\\
     filtre passe-bande & canal de transmission & son 2 & la topologie (MFB)\\
     filtre passe-bande étroit & canal de transmission & signal de la \textit{DEL} & la topologie (biquad)\\
-    démodulateur & son 2 modulé & son 2 démodulé & tension de sortie du son 2\\
+    démodulateur & son 2 modulé & son 2 démodulé & -\\
   \end{NiceTabularX}
 \end{table}
 
-%% ATTENTION ! L'utilisation du package nicematrix nécessite 2 Ã  3 compilations successives pour que le tableau ait un beau rendu.
+Dans la conception de ce produit, nous considérons trois choix qui ont été beaucoup plus important que les autres et ces choix réside dans la conception de nos filtres.
+
+Commençons par le \textbf{filtre passe-bas} qui extrait le son \#1, pour lequel nous avons choisi d'utiliser un filtre de \textit{Chebychev}. Ce choix de filtre a été basé sur le fait qu'il permet de réaliser le filtre avec un ordre moins élevé. Donc, avec un ordre moins élevé, ça réduit le nombre d'étages requis pour réaliser le filtre et ça réduit aussi le coût de la réalisation.
+
+Le deuxième choix important est sur la topologie du \textbf{filtre passe-bande} qui extrait le son \#2. Pour ce filtre, nous avons choisi la topologie \textit{multiple feedback}, car elle est facile à utiliser et comporte généralement une bonne sensibilité sur les composantes. Chacune des étages de cette topologie ont un seul amplificateur opérationnel ce qui n'est pas trop couteux.
+
+Le dernier choix important se rapporte sur le \textbf{filtre passe-bande étroit} qui extrait le signal de la \textit{DEL}. Nous avons conclu que la topologie \text{biquad de Tow-Thomas} était la plus appropriée pour cette situation. On a gardé cette topologie, car elle est facile à utiliser. On peut facilement manipuler son facteur de qualité, son gain et sa fréquence centrale à partir de ces composantes.
 
 \clearpage
 \section{Intégration du système}
@@ -245,100 +251,10 @@ Les résultats présentés doivent prouver que le produit répond au besoin, pas
 
 \textbf{Les courbes doivent être retracée à partir des données exportées; les captures d'écran de courbes ne sont pas acceptées.}
 
-Pour valider le fonctionnement de l'entièreté de notre projet, nous avons effectué deux tests pour chaque module. Chaque module comporte l'extraction d'un différent signal d'entrée. Le module un est sur  l'extraction du son \#1 du canal de transmission. Le module deux comporte l'extraction du son \#2 du canal de transmission. Le module trois est l'extraction du signal de la \textit{DEL} du canal de transmission. Alors globalement, les deux tests pour chaque modules sont :
+Pour valider le fonctionnement de l'entièreté de notre projet, nous avons effectué un test pour chaque module. Chaque module comporte l'extraction d'un différent signal d'entrée. Le module un est sur  l'extraction du son \#1 du canal de transmission. Le module deux comporte l'extraction du son \#2 du canal de transmission. Le module trois est sur l'extraction du signal de la \textit{DEL} du canal de transmission. Le test qu'on a effectué est une \textit{FFT} pour chaque extraction de signal. Grâce à la \textit{FFT}, il nous est possible de comprendre comment l'amplitude de la sortie varie selon la fréquence de l'entrée. Elle nous permet de vérifier quelles fréquences sont gardées et atténuées pour l'extraction du signal.
 
-\begin{itemize}
-  \item Si on génère un signal \textbf{dans la bande passante} du filtre qui l'extrait à l'entrée du canal de transmission, est-ce qu'il est \textbf{encore présent} après avoir été filtrer ? Si oui, à t-il la même forme qu'à l'entrée ?
-  \item Si on génère un signal \textbf{en dehors de la bande passante} du filtre qui l'extrait à l'entrée du canal de transmission, est-ce qu'il \textbf{atténue correctement} ce signal après l'avoir filtré ?
-\end{itemize}
+Par exemple, pour valider l'extraction du son \#1, nous avons généré le son \#1 dans l'entrée du canal de transmission et nous avons vérifié la \textit{FFT} à la sortie de l'extraction du son \#1 tel que le démontre la figure \ref{affaire}.
 
-\begin{framed}
-  Par exemple, pour le son \# 1, si on génère un signal sinusoïde de 1 V crête à crête, est-il encore présent après avoir été filtré par le passe-bas ? S'il est encore présent, est-ce qu'il est le même après avoir été filtré ? On regarde son amplitude, sa forme (distorsion), sa fréquence et etc. 
-\end{framed}
-
-\begin{figure}[ht]
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width=0.85\linewidth,
-      height=6cm,
-      xlabel={Temps (ms)},
-      ylabel={Tension (V)},
-      grid=both,
-      xmin = 0,
-      xmax = 1.5
-    ]
-    \addplot[
-      vert_poly,
-      line width=1.5pt,
-      no marks
-    ]
-    table[
-      col sep=semicolon,
-      x expr=\thisrowno{0}*1000,
-      y index=1,
-      header=true
-    ]{CSV/sinusGenPasseBas1.csv};
-    \addplot[
-      bleu_poly,
-      line width=1.5pt,
-      no marks
-    ]
-    table[
-      col sep=semicolon,
-      x expr=\thisrowno{0}*1000,
-      y index=1,
-      header=true
-    ]{CSV/testPasseBas.csv};
-    \addlegendentry{signal généré de 5 kHz}
-    \addlegendentry{signal filtré}
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Comportement d'un signal sinusoïde de 1 V crête à crête dans la bande passante du filtre du son \#1}
-  \label{fig:testSon1}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \begin{tikzpicture}
-    \begin{axis}[
-      width=0.85\linewidth,
-      height=6cm,
-      xlabel={Temps (ms)},
-      ylabel={Tension (V)},
-      grid=both,
-      xmin=0,
-      xmax=2e-2
-    ]
-    \addplot[
-      vert_poly,
-      line width=1.5pt,
-      no marks
-    ]
-    table[
-      col sep=semicolon,
-      x expr=\thisrowno{0}*1000,
-      y index=1,
-      header=true
-    ]{CSV/sinusGenPasseBas2.csv};
-    \addplot[
-      bleu_poly,
-      line width=1.5pt,
-      no marks
-    ]
-    table[
-      col sep=semicolon,
-      x expr=\thisrowno{0}*1000,
-      y index=1,
-      header=true
-    ]{CSV/testPasseBas2.csv};
-    \addlegendentry{signal généré de 50 kHz}
-    \addlegendentry{signal filtré}
-    \end{axis}
-  \end{tikzpicture}
-  \caption{Comportement d'un signal sinusoïde de 1 V crête à crête en dehors dans la bande passante du filtre du son \#1}
-  \label{fig:testSon1.2}
-\end{figure}
 
 \clearpage
 \section{Tableau de conformité}
@@ -371,10 +287,14 @@ Le produit contient plusieurs limites expérimentales :
 \begin{itemize}
   \item La sensibilité des composantes, notamment dans les passes bandes.
   \item Le fonctionnement linéaire des composantes comme la \textit{JFET} et la diode.
-  \item Les effets parasites des composantes.
+  \item Les contraintes de notre montage.
 \end{itemize}
 
 Commençons par dénoncer la sensibilité du produit. Lors de la conception du projet, nous avons choisi deux topologies distinctes pour la conception des filtres : la topologie \textit{multiple feedback} et la topologie \textit{biquad de Tow-Thomas}. La première topologie comporte une bonne sensibilité généralement Par contre, pour l'extraction du son \#2 du canal de transmission, nous avons fait un filtre d'ordre 12 qui utilise cette topologie et cet ordre élevé fait en sorte qu'une erreur sur une composante à plus d'effet sur l'allure globale du filtre. Il faut alors faire attention à la tolérance des composantes du filtre passe bande de l'extraction du son \#2. Du même vaut pour la deuxième topologie qu'on a choisi pour l'extraction du signal de la \textit{DEL}. La topologie \textit{biquad de Tow-Thomas} est très sensible et il faut faire attention pour la tolérance des composantes.
+
+Ensuite, il y a une limite par rapport à nos composantes qui fonctionnent dans un régime linéaire. Le transistor \textit{JFET} ne peut que fonctionner proprement pour un intervalle de tension exact. Pour qu'il complète sa fonction, il est nécessaire de déterminer cette zone linéaire avant d'effectuer le circuit modulateur. En effet, le comportement de la \textit{JFET} peut varier de composante à composante et il faut donc modifier le circuit modulateur en conséquence. Dans notre cas, notre zone linéaire était de 0 - 6 V, alors nous avons fait en sorte que le transistor prennent un sinus de 3 V d'amplitude centrée à 3 V. 
+
+Finalement, de la figure \ref{AFFAIRE}, on observe que la disposition de notre solution n'est pas optimale. D'un, il serait possible d'optimiser l'espace en déplaçant le démodulateur sur la plaquette principale. Une autre effet lié à cette disposition est la présence des effets parasites. Vu que les composantes sont rapprochées entre elles, comme dans le passe-bande, il peut y avoir un effet de couplage parasite. Plus précisément, pour le passe-bande, il peut y avoir du couplage capacitif causant ainsi la sortie du filtre à être instable.
 
 
 \clearpage
