@@ -301,6 +301,11 @@ Finalement, de la figure \ref{AFFAIRE}, on observe que la disposition de notre s
 \section{Conclusion}
 La conclusion doit indiquer clairement si le produit répond au besoin, avec quelles performances et avec quelles limites.
 
+En conclusion, le produit répond au besoin. En effet, on est capable de récupérer les deux sons ainsi que le signal qui alimente la DEL. Cependant, le produit comporte certaines limites au niveau de 
+la récupération du son 2. En effet, la bande passante du filtre qui récupère le son 2 modulé n'est pas exactement au même gain. Ainsi, lorsqu'on écoute le son 2, le volume du son change dépendemment des différentes
+fréquences qui charactérise le son. À part ce détail, le produit fonctionne parfaitement. En effet, on peut écouter le son 1 parfaitement avec un bon volume sans entendre le son 2 ou du bruit provenant de la DEL. Lorsqu'on allume 
+la DEL avec le bouton, l'écoute des différents sons ne sont pas perturbées et la DEL allumée contient une bonne luminosité. Même si le volume du son 2 est perturbée en raison des limitations de notre filtre, on écoute bien uniquement le son 2 
+sans entendre le son 1. 
 \clearpage
 \section{Apprentissage continu}
 Présentez une ou plusieurs lacunes techniques rencontrées pendant le projet et les moyens utilisés pour les combler. Cette section doit rester liée au contenu technique du projet : notion à approfondir, outil à mieux maîtriser, méthode de mesure, stratégie de débogage ou choix de conception à améliorer.
@@ -314,7 +319,7 @@ Dès le début du projet, lors de la conception du circuit réalisant l'extracti
     compte la tolérance des composantes. Ainsi, en pratique, on n'avait pas exactement le résultats exact attendu. Pour remédier à ce problème, nous avons remplacés certaines composantes 
     ayant de faible tolérances pour faire un montage le plus fidèle possible à la simulation. En effet, par exemple, nous avons remplacés certaines résistances ayant des tolérances de 
     $10\%$ par d'autre ayant des tolérances de $1\%$. Une autre solution qu'on a fait est d'ajuster certains circuits qui sont simple à manipuler pour matcher avec d'autres circuits plus complexe ayant une 
-    résultat pratique différent de la simulation. Par exemple, pour notre passe bande qui récupère le son 2 modulé, la tolérances des résistances à décaler la bande passante. Pour remédier à ce problème, 
+    résultat pratique différent de la simulation. Par exemple, pour notre passe bande qui récupère le son 2 modulé, en raison des tolérances élevés des résistances à décaler la bande passante. Pour remédier à ce problème, 
     nous avons modifié notre circuit oscillateur qui génère une onde porteuse afin qu'il oriente la modulation du son 2 dans la bande passante du passe bande. Pour que l'oscillateur génère un signal le plus
     proche possible au signal voulu, nous avons utilisé des résistances ayant des tolérances de $1\%$. L'outil qu'il fallait plus maitriser durant ce projet était le logiciel de simulation. En effet, 
     notre erreur était qu'on a fait des simulations sans tenir compte des tolérances des composantes. Si on avait pris cela en compte, on aurait eu des simulations plus fidèles à la réalité et ainsi on aurait 
