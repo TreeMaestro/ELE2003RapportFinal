@@ -309,6 +309,21 @@ Indiquez aussi ce qui devrait être appris ou approfondi pour améliorer une pro
 
 Dès le début du projet, lors de la conception du circuit réalisant l'extraction du son deux, on avait de la difficulté à réaliser ce filtre expérimentalement. Théoriquement, notre simulation \textit{ltspice} fonctionnement parfaitement, mais on n'arrivait pas à trouver la cause de l'erreur. On a alors dû apprendre très tôt des bonnes stratégies de débogage afin d'arriver à terminer le module de notre projet. On a appris à commencer à analyser le problème dans sa globalité et d'aller de plus en plus précis. Pour améliorer une prochaine version du produit, apprendre à déboguer plus efficacement et plus rapidement est grandement avantageux pour sauver du temps dans la réalisation du projet ce qui donne aussi plus de temps pour améliorer le produit.
 
+
+    L'une des plus grande difficultées rencontrés lors du projet est la tolérance des différentes composantes utilisées. En effet, en simulation on ne prenait pas en 
+    compte la tolérance des composantes. Ainsi, en pratique, on n'avait pas exactement le résultats exact attendu. Pour remédier à ce problème, nous avons remplacés certaines composantes 
+    ayant de faible tolérances pour faire un montage le plus fidèle possible à la simulation. En effet, par exemple, nous avons remplacés certaines résistances ayant des tolérances de 
+    $10\%$ par d'autre ayant des tolérances de $1\%$. Une autre solution qu'on a fait est d'ajuster certains circuits qui sont simple à manipuler pour matcher avec d'autres circuits plus complexe ayant une 
+    résultat pratique différent de la simulation. Par exemple, pour notre passe bande qui récupère le son 2 modulé, la tolérances des résistances à décaler la bande passante. Pour remédier à ce problème, 
+    nous avons modifié notre circuit oscillateur qui génère une onde porteuse afin qu'il oriente la modulation du son 2 dans la bande passante du passe bande. Pour que l'oscillateur génère un signal le plus
+    proche possible au signal voulu, nous avons utilisé des résistances ayant des tolérances de $1\%$. L'outil qu'il fallait plus maitriser durant ce projet était le logiciel de simulation. En effet, 
+    notre erreur était qu'on a fait des simulations sans tenir compte des tolérances des composantes. Si on avait pris cela en compte, on aurait eu des simulations plus fidèles à la réalité et ainsi on aurait 
+    eu moins de surprise en laboratoire. 
+
+    Au niveau du déboguage, notamment au niveau de la conception de filtre, nous avons analysé chaque étage du filtre une à la fois. De plus, nous avons analysés le diagramme de Bode des filtres pour savoir 
+    si le filtre en question récupère les fréquences voulues. Ä part le diagramme de bode, pour s'assurer que le filtre marchait bien, on générait un signal ayant une fréquence dans la bande passante du filtre et on 
+    s'assurait, à la sortie du filtre, dans le domaine temporel, que le signal généré soit bien récupérer par le filtre. Inversement, on générait aussi un signal ayant une fréquence qui n'était pas dans la bande passante
+    du filtre et en mesurant la sortie du filtre, dans le domaine temporel, on s'assurait que le signal était fortement atténué. 
 \clearpage
 Utilisez cette section seulement si des annexes sont nécessaires.
 \appendix
